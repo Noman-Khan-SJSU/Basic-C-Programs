@@ -1,0 +1,16 @@
+#include<stdio.h>
+
+void main(){
+
+    int x=1, y=2, temp;
+    printf("x=%d and y=%d\n", x, y);
+    temp = y;
+    y = x;
+    x = temp;
+    printf("x=%d and y=%d", x, y);
+    
+}
+
+
+//Swap the values of two integer variables
+

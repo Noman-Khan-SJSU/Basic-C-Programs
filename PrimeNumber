@@ -1,0 +1,34 @@
+// Find whether a number is prime or not using trial division method.
+// Time Complexity: O(sqrt(n)).
+// If we want to find all prime numbers up to n then time complexity will be O{n.sqrt(n)).
+
+#include<stdio.h>
+#include<math.h>
+
+void main()
+{
+    int num, i;
+    printf("Enter the number: ");
+    scanf("%d", &num);
+    if(num<2)
+    {
+        printf("Not a Prime!");
+    }
+    else
+    {
+        for (i = 2; i <= (sqrt(num)); i++)                // There has to be a co-factor of a number which is <=(square root of the number), for it to be a composite number. Therefore, looping till (num-1) is unnecessary.
+        {
+            if (num % i == 0)
+            {
+                printf("Not a Prime!");
+                break;
+            }
+        }
+        if (i == ((int)(sqrt(num))+1))                  // Here typecasting is required since an int type is being compared with a double.
+        {
+            printf("%d is a prime number", num);
+        }
+
+    }
+}
+

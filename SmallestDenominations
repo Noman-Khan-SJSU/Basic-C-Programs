@@ -1,0 +1,40 @@
+#include<stdio.h>
+
+void main() {
+
+    int num, i,j, x, y=0;
+    int a[]= {100,50,10,5,2};
+    printf("Enter the amount: ");
+    scanf("%d", &num);
+    for (i=0,j=0; i<5 && j<5; i++,j++){
+        x=num/a[j];
+        num = num - (x*a[j]);
+        y += x;
+    }
+    printf("Smallest number of bills are %d", y+num);
+
+}
+
+/*
+    Consider a currency system in which there are bills of six denominations, namely,
+    $1, $2, $5, $10, $50, $100. If a sum of $N is entered through the keyboard, write
+    a program to compute the smallest number of bills that will combine to give $N.
+*/
+
+
+/*Alternate Method but not so good approach
+    int num, t1, t2, t3, t4, t5;
+    printf("Enter a five digit number: ");
+    scanf("%d", &num);
+    t1 = num/100;
+    num = num - (t1*100);
+    t2 = num/50;
+    num = num - (t2*50);
+    t3 = num/10;
+    num = num - (t3*10);
+    t4 = num/5;
+    num = num - (t4*5);
+    t5 = num/2;
+    num = num - (t5*2);
+    printf("Smallest number of bills are %d", t1+t2+t3+t4+t5+num);
+*/

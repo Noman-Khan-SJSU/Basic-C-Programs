@@ -1,0 +1,26 @@
+// Find factorial of a given number using recursion.
+// Any recursive program can be written in iterative as well and vice versa is also true.
+// Iterative is mostly better in performance than recursive but latter is more easier to
+// write. However, user may write a program in anyway for practical purposes.
+// Time Complexity: O(n) and Space Complexity: O(n).
+
+#include<stdio.h>
+
+int factorial(int);
+
+void main()
+{
+    int num, fact;
+    printf("Enter the number: ");
+    scanf("%d", &num);
+    fact = factorial(num);
+    printf("Factorial of %d is %d", num, fact);
+}
+
+int factorial (int num)
+{
+        if (num==0)
+            return 1;
+        else
+            return num * factorial(num - 1);
+}

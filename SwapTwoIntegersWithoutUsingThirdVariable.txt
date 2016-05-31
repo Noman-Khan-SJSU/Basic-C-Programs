@@ -1,0 +1,22 @@
+#include<stdio.h>
+
+void main(){
+
+    int x=4, y=9;
+    printf("x=%d and y=%d\n", x, y);
+    x = x + y ;
+    y = x - y ;
+    x = x - y ;
+    printf("x=%d and y=%d", x, y);
+
+}
+
+//Swap the values of two integer variables without using third variable
+
+//Alternate Logic
+
+/*
+x = x * y ;
+y = x / y ;
+x = x / y ;
+*/

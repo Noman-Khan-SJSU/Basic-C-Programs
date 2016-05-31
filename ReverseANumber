@@ -1,0 +1,39 @@
+#include<stdio.h>
+
+void main() {
+
+    int number, num, i, x,y=0,z=10000;
+    printf("Enter a five digit number: ");
+    scanf("%d", &number);
+    num = number;
+    for (i=0; i<5; i++){
+        x = num%10;
+        x *= z;
+        y += x;
+        z /= 10;
+        num /=10;
+    }
+    printf("Reverse of %d is %d",number, y);
+
+}
+
+//Reverse a five digit number
+
+//Using PowerOrExponent function and Number of Digits function. This problem can be solved for any digit number.
+
+/*Alternate Method but not so good approach
+int number, num, t1, t2, t3, t4, t5;
+    printf("Enter a five digit number: ");
+    scanf("%d", &number);
+    num =  number;
+    t1 = num%10;
+    num /= 10;
+    t2 = num%10;
+    num /= 10;
+    t3 = num%10;
+    num /= 10;
+    t4 = num%10;
+    num /= 10;
+    t5 = num%10;
+    printf("Reverse of %d is %d", number, t1*10000+t2*1000+t3*100+t4*10+t5);
+*/

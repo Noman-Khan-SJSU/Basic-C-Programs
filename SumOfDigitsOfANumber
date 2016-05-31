@@ -1,0 +1,34 @@
+#include<stdio.h>
+
+void main() {
+
+    int num, i, x,y=0;
+    printf("Enter a five digit number: ");
+    scanf("%d", &num);
+    for (i=0; i<5; i++){
+        x = num%10;
+        y += x;
+        num /=10;
+    }
+    printf("Sum of digits is %d",y);
+
+}
+
+//Sum of the digits of a five digit integer
+
+
+/*Alternate Method but not so good approach
+int num, t1, t2, t3, t4, t5;
+printf("Enter a five digit number: ");
+scanf("%d", &num);
+t1 = num%10;
+num /= 10;
+t2 = num%10;
+num /= 10;
+t3 = num%10;
+num /= 10;
+t4 = num%10;
+num /= 10;
+t5 = num%10;
+printf("Sum of the digits is %d", t1+t2+t3+t4+t5);
+ */

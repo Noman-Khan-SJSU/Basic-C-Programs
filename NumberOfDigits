@@ -1,0 +1,18 @@
+#include<stdio.h>
+
+void main() {
+
+    int number, num,l;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    number = num;
+    if (number<0)
+        number *= -1;
+    for (l=0; number > 0;l++){
+        number /= 10;
+    }
+    printf("Number of digits in %d are/is %d",num, l);
+
+}
+
+/*Number of digits in a number*/

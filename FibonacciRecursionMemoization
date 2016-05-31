@@ -1,0 +1,28 @@
+// Fibonacci using recursion with memoization. Memoization is saving the result after every calculation
+// so that we don't have to recalculate the same results again. This reduces time complexity a lot.
+// Time Complexity; O(n) and Space Complexity: O(n).
+
+#include<stdio.h>
+
+int F[50];                                              // All elements are initialized with value 0;
+
+int fib (int num)
+{
+    if (F[num] != -1)
+        return F[num];
+    else
+        F[num] = fib(num-1)+fib(num-2);
+    return F[num];
+}
+
+void main()
+{
+    int num,result,i;
+    F[1]=0, F[2]=1;                                     // Base condition for recursion.
+    for (i=3; i<50; i++)
+        F[i] = -1;
+    printf("Enter fibonacci element number: ");
+    scanf("%d", &num);
+    result = fib(num);
+    printf("Fibonacci of element number %d is %d", num, result);
+}

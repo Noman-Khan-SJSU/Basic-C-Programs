@@ -1,0 +1,40 @@
+// Power or exponent function calculates a number raised to some power/exponent.
+// It calculates the number multiplied to itself 'n' times.
+// Time Complexity: O(n)
+
+#include<stdio.h>
+
+long pow (long base, long power)
+{
+    if (power==0)
+        return 1;
+    return base * pow (base, power-1);
+}
+
+void main()
+{
+    long base, exponent,result;
+    printf("Enter the base:");
+    scanf("%ld",&base);
+    printf("\nEnter its power: ");
+    scanf("%ld", &exponent);
+    result = pow (base, exponent);
+    printf("%ld to the power %ld is %ld", base, exponent, result);
+}
+
+//Better Approach. Time complexity here is "O(log n)" where above function has O(n).
+
+/*
+ long pow (long base, long power)
+{
+    long x;
+    if (power==0)
+        return 1;
+    if (power%2 == 0){                             // If the power is even then, base^power = (base^power/2 * base^power/2)
+        x = pow(base, power/2);
+        return x*x;                               // This is better than returning [pow(base,power/2) * pow(base,power/2)], since recursive function is called only once.
+        }
+    else
+        return base * pow (base, power-1);
+}
+*/

@@ -1,0 +1,27 @@
+// Find fibonacci using recursion.
+// Any recursive program can be written in iterative as well, and vice versa is also true.
+// Iterative is mostly better in performance than recursive but latter is more easier to
+// write, maintain and understand. However, one may write a program in anyway for most practical purposes.
+// Time Complexity: O(2^n) and Space Complexity: O(n) (because of the recursion tree).
+
+#include<stdio.h>
+
+int fib(int);
+
+void main()
+{
+    int num, f;
+    printf("Enter fibonacci element number: ");
+    scanf("%d", &num);
+    f = fib(num);
+    printf("Fibonacci is %d\n", f);
+}
+
+int fib (int num)
+{
+    if (num==1)
+        return 0;
+    if  (num==2)
+        return 1;
+    return fib(num-1)+fib(num-2);
+}
